@@ -1,5 +1,5 @@
 
-import {expect, test} from '@playwright/test'
+import {chromium, expect, test} from '@playwright/test'
 import {HomePage} from '../../src/pages/HomePage'
 import { LoginPage } from '../../src/pages/LoginPage';
 
@@ -7,10 +7,12 @@ let homePage: HomePage;
 let loginPage: LoginPage;
 
 test.beforeEach(async({page})=>{
+    
     loginPage=new LoginPage(page);
     await loginPage.goToLoginPage();
     await loginPage.doLogin('mia.anderson48@test.com','pw@123')
     homePage=new HomePage(page)
+    
 
 })
 

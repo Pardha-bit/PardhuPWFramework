@@ -35,6 +35,7 @@ export class LoginPage extends BasePage{
 
     async isForgottenPasswordLinkExist(): Promise<boolean>{
         return await this.forgottenPassword.isVisible();
+        
     }
 
     async doLogin(userName: string , password : string): Promise<void>{

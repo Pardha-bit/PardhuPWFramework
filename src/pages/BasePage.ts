@@ -9,7 +9,7 @@ export class BasePage{
     constructor(page: Page){
 
         this.page=page;
-        console.log("hi");
+        console.log("hi---hello");
     }
 
 }

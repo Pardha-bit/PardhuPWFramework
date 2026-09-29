@@ -10,9 +10,6 @@ console.log('Running tests on Environment: ', ENV);
 console.log(dotenv.config({ path: `config/.env.${ENV}` }));
 dotenv.config({ path: `config/.env.${ENV}` });
 
-
-
-
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -22,9 +19,20 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 2 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [
+  reporter: process.env.CI 
+  ?[
+      ["list"],
+      ["html",{outputfolder: "reports/html-report",open: "never"}],
+      ["allure-playwright",{
+        outputFolder: "allure-results",
+        suiteTitle: true
+      }]
+
+  ]
+  :
+  [
       ["list"],
       ["html",{outputfolder: "reports/html-report",open: "never"}],
       ["allure-playwright",{
@@ -37,8 +45,7 @@ export default defineConfig({
   use: {
     
     baseURL: process.env.BASE_URL,
-
-    headless: true,
+    headless: !process.env.CI ? false : true,
     trace: 'on',
     video:'on',
     screenshot:'on'

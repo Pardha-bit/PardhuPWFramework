@@ -21,6 +21,7 @@ test('get access token',async({request})=>{
     let contactJson=await response.json();
     accessToken=contactJson.token;
     console.log(accessToken);
+    return accessToken;
 
 })
 
@@ -29,7 +30,7 @@ test('add contct',async({request})=>{
 
     let conatctData={
 
-            "firstName": "Pardha",
+            "firstName": `Pardha${Date.now}`,
             "lastName": "Doe",
             "birthdate": "1970-01-01",
             "email": "jdoe@fake.com",
