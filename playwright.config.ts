@@ -22,9 +22,10 @@ export default defineConfig({
   workers: process.env.CI ? 2 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI 
-  ?[
+  ? 
+  [
       ["list"],
-      ["html",{outputfolder: "reports/html-report",open: "never"}],
+      ["html",{outputFolder: "reports/html-report",open: "never"}],
       ["allure-playwright",{
         outputFolder: "allure-results",
         suiteTitle: true
@@ -32,20 +33,22 @@ export default defineConfig({
 
   ]
   :
-  [
+
+   [
       ["list"],
-      ["html",{outputfolder: "reports/html-report",open: "never"}],
+      ["html",{outputFolder: "reports/html-report",open: "never"}],
       ["allure-playwright",{
         outputFolder: "allure-results",
         suiteTitle: true
       }]
 
   ],
+ 
   
   use: {
     
     baseURL: process.env.BASE_URL,
-    headless: !process.env.CI ? false : true,
+    headless: !process.env.CI ? true : true,
     trace: 'on',
     video:'on',
     screenshot:'on'
