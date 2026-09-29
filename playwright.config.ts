@@ -34,7 +34,7 @@ export default defineConfig({
   :
   [
       ["list"],
-      ["html",{outputfolder: "reports/html-report",open: "never"}],
+      ["html",{outputFolder: "reports/html-report",open: "never"}],
       ["allure-playwright",{
         outputFolder: "allure-results",
         suiteTitle: true
