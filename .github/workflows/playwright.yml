@@ -67,13 +67,14 @@ jobs:
         env:
           ENV: ${{ github.event.inputs.environment || 'QA' }}
           BASE_URL: ${{ secrets.BASE_URL }}
-          USERNAME: ${{ secrets.USERNAME }}
+          USER_NAME: ${{ secrets.USER_NAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
           API_BASE_URL: ${{ secrets.API_BASE_URL }}
           API_TOKEN: ${{ secrets.API_TOKEN }}
+          API_BASE_URL_BOOKING: ${{ secrets.API_BASE_URL_BOOKING }}
           OAUTH_CLIENT_ID: ${{ secrets.OAUTH_CLIENT_ID }}
           OAUTH_CLIENT_SECRET: ${{ secrets.OAUTH_CLIENT_SECRET }}
-          GRANT_TYPE: ${{ secrets.GRANT_TYPE }}
+          OAUTH_GRANT_TYPE: ${{ secrets.OAUTH_GRANT_TYPE }}
 
       - name: Upload HTML Report
         if: always()
