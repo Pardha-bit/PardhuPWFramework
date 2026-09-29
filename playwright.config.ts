@@ -24,7 +24,7 @@ export default defineConfig({
   reporter: process.env.CI 
   ?[
       ["list"],
-      ["html",{outputfolder: "reports/html-report",open: "never"}],
+      ["html",{outputfFolder: "reports/html-report",open: "never"}],
       ["allure-playwright",{
         outputFolder: "allure-results",
         suiteTitle: true
