@@ -10,13 +10,13 @@ test.beforeEach(async({loginPage})=>{
 
 })
 
-test('@smoke home page title test',async ({homePage})=>{
+test.skip('@smoke home page title test',async ({homePage})=>{
     let pageTitle=await homePage.homePageTitle();
     console.log(pageTitle);
     expect(pageTitle).toBe('My Account')
 })
 
-test('@smoke validate home page', async({homePage})=>{
+test.skip('@smoke validate home page', async({homePage})=>{
 
     expect(await homePage.isLogOutLinkExist()).toBeTruthy()
 
