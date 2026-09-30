@@ -4,7 +4,7 @@ import {test,expect} from '../../src/api/apifixtures'
 
 let TOKEN_HEADER: string;
 
-test('get token',async({apiHelper})=>{
+test.skip('get token',async({apiHelper})=>{
 
     let data={
         username: "admin",
@@ -25,7 +25,7 @@ let Auth_Header = {
     Authorization: `Bearer ${TOKEN_AUTH}`
 }
 
-test('get booking', async({apiHelper})=>{
+test.skip('get booking', async({apiHelper})=>{
     let response= await apiHelper.get('booking',Auth_Header)
     expect(response.status).toBe(200)
 

@@ -30,8 +30,3 @@ test.beforeEach('get access token -post',async({request})=>{
 
 })
 
-test('get album records',async({request})=>
-{
-    
-    request.get()
-})

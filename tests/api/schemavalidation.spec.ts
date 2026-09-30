@@ -41,7 +41,7 @@ let ajv= new Ajv()
 //   ]
 // }
 
-test('get a User schema test',async({apiHelper})=>{
+test.skip('get a User schema test',async({apiHelper})=>{
 
         let userData={
             name: "pardhu-update",

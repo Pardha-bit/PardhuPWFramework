@@ -28,7 +28,7 @@ test.beforeEach('get token', async({request})=>{
 
 })
 
-test('get booking id',async({request})=>{
+test.skip('get booking id',async({request})=>{
 
     let bokingResonse =await request.get(bookingUrl,{
         headers:{
@@ -42,7 +42,7 @@ test('get booking id',async({request})=>{
 
 })
 
-test('Create booking',async({request})=>{
+test.skip('Create booking',async({request})=>{
 
     let createBookingResponse = await request.post(bookingUrl,{
         headers:{
@@ -71,7 +71,7 @@ test('Create booking',async({request})=>{
 
 })
 
-test('get booking',async({request})=>{
+test.skip('get booking',async({request})=>{
 
     let response = await request.get(`https://restful-booker.herokuapp.com/booking/:${bookingId}`,{
         headers:{

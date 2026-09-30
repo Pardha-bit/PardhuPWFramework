@@ -9,7 +9,7 @@ test.beforeEach(async({loginPage})=>{
 })
 
 
-test('get prodcut data and price', async({homePage,productPage,searchResultsPage,page})=>{
+test('@regression get prodcut data and price', async({homePage,productPage,searchResultsPage,page})=>{
 
     await  homePage.doSearch('macbook');
     await  searchResultsPage.selectProduct('Macbook');

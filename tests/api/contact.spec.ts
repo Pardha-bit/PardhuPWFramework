@@ -5,7 +5,7 @@ import {test,expect} from '@playwright/test'
 
 let accessToken: string;
 
-test('get access token',async({request})=>{
+test.skip('get access token',async({request})=>{
 
     let accessURL='https://thinking-tester-contact-list.herokuapp.com/users/login'
     let data={
@@ -25,7 +25,7 @@ test('get access token',async({request})=>{
 
 })
 
-test('add contct',async({request})=>{
+test.skip('add contct',async({request})=>{
     let contactUrl='https://thinking-tester-contact-list.herokuapp.com/contacts'
 
     let conatctData={

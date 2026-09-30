@@ -8,7 +8,7 @@ test.beforeEach(async({loginPage})=>{
 
 })
 
-test('verify search results count', async({homePage,page,searchResultsPage})=>{
+test('@smoke verify search results count', async({homePage,page,searchResultsPage})=>{
 
         await homePage.doSearch('macbook');
         let resultCount=await searchResultsPage.getProductImageCount();
@@ -16,7 +16,7 @@ test('verify search results count', async({homePage,page,searchResultsPage})=>{
 
 })
 
-test('verify product landing on product page',async({homePage,searchResultsPage,page})=>{
+test('@smoke verify product landing on product page',async({homePage,searchResultsPage,page})=>{
 
     await homePage.doSearch('macbook');
     await searchResultsPage.selectProduct('MacBook');

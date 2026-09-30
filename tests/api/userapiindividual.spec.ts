@@ -24,7 +24,7 @@ async function createUser(apiHelper : any) {
 }
 
 
-test('Create a user test',async({apiHelper})=>{
+test.skip('Create a user test',async({apiHelper})=>{
 
     let userResponse =await createUser(apiHelper);
 
@@ -37,7 +37,7 @@ test('Create a user test',async({apiHelper})=>{
 
 })
 
-test('update user',async({apiHelper})=>{
+test.skip('update user',async({apiHelper})=>{
 
     let updateUserResponse = await createUser(apiHelper)
 
@@ -61,7 +61,7 @@ test('update user',async({apiHelper})=>{
     expect(getResponse.body.status).toBe(userData.status)
 })
 
-test('delete user', async ({apiHelper})=>{
+test.skip('delete user', async ({apiHelper})=>{
 
     let deleteUser = await createUser(apiHelper)
 

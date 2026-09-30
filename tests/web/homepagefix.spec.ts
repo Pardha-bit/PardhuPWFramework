@@ -10,19 +10,19 @@ test.beforeEach(async({loginPage})=>{
 
 })
 
-test('home page title test',async ({homePage})=>{
+test('@smoke home page title test',async ({homePage})=>{
     let pageTitle=await homePage.homePageTitle();
     console.log(pageTitle);
     expect(pageTitle).toBe('My Account')
 })
 
-test('validate home page', async({homePage})=>{
+test('@smoke validate home page', async({homePage})=>{
 
     expect(await homePage.isLogOutLinkExist()).toBeTruthy()
 
 })
 
-test('get headers in home page test', async({homePage})=>{
+test('@regression get headers in home page test', async({homePage})=>{
 
     let headers =await homePage.getHeadersLink()
     console.log(headers);
