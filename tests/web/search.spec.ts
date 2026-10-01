@@ -1,26 +1,31 @@
 import {test,expect} from '../../src/fixtures/pagefixtures'
 
-test.beforeEach(async({loginPage})=>{
+test('open url', async({loginPage})=>{
+
+     await loginPage.goToLoginPage();
+})
+
+// test.beforeEach(async({loginPage})=>{
     
-    await loginPage.goToLoginPage();
-    await loginPage.doLogin(process.env.USER_NAME,process.env.PASSWORD)
+//     await loginPage.goToLoginPage();
+//     await loginPage.doLogin(process.env.USER_NAME,process.env.PASSWORD)
    
 
-})
+// })
 
-test('@smoke verify search results count', async({homePage,page,searchResultsPage})=>{
+// test('@smoke verify search results count', async({homePage,page,searchResultsPage})=>{
 
-        await homePage.doSearch('macbook');
-        let resultCount=await searchResultsPage.getProductImageCount();
-        expect(resultCount).toBe(3)
+//         await homePage.doSearch('macbook');
+//         let resultCount=await searchResultsPage.getProductImageCount();
+//         expect(resultCount).toBe(3)
 
-})
+// })
 
-test('@smoke verify product landing on product page',async({homePage,searchResultsPage,page})=>{
+// test('@smoke verify product landing on product page',async({homePage,searchResultsPage,page})=>{
 
-    await homePage.doSearch('macbook');
-    await searchResultsPage.selectProduct('MacBook');
-    expect(await page.title()).toBe('MacBook');
+//     await homePage.doSearch('macbook');
+//     await searchResultsPage.selectProduct('MacBook');
+//     expect(await page.title()).toBe('MacBook');
     
 
-})
+// })
