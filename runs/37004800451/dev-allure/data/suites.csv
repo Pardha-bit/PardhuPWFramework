@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2685","@smoke open url","chromium","2026-10-02","passed","2026-10-02","","web/productpage.spec.ts","",""
+"","2459","@smoke open url","chromium","2026-10-02","passed","2026-10-02","","web/loginpagefix.spec.ts","",""
